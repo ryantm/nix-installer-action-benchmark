@@ -1,0 +1,25 @@
+name: "benchmark"
+on:
+  pull_request:
+  push:
+jobs:
+  benchmark-cachix:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@main
+      - uses: cachix/install-nix-action@master
+  benchmark-determinatesystems:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@main
+      - uses: DeterminateSystems/nix-installer-action@main
