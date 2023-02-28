@@ -23,3 +23,15 @@ jobs:
     steps:
       - uses: actions/checkout@main
       - uses: DeterminateSystems/nix-installer-action@main
+  benchmark-nixbuild:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@main
+      - uses: nixbuild/nix-quick-install-action@master
+        with:
+          nix_conf: experimental-features = nix-command flakes
