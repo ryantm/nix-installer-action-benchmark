@@ -19,3 +19,4 @@ Based on 1 GitHub actions run.
 | cachix              | macos-latest  |   42s|
 | determinate-systems | ubuntu-latest |   17s|
 | determinate-systems | macos-latest  |   49s|
+
